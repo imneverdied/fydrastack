@@ -1,6 +1,8 @@
 <title>股票手續費試算</title>
-<p>股票手續費試算</p>
+<!-- <p>股票手續費試算</p> -->
 <p>
+  <label>買入</label>
+  <br />
   <label>交易手續費%數</label>
   <input matInput [(ngModel)]="BuyFee" />
   <!-- <label>{{BuyFee}}</label> -->
@@ -16,12 +18,39 @@
   <label>買入股票單價</label>
   <input matInput [(ngModel)]="BPrice" />
   <br />
-  <label>買入手續費</label>
-  <label> $[{{(BuyFee*Discount*(Stack*1000)*BPrice)| number:'1.0-2'}}]</label>
+  <label>買入手續費 $ </label>
+  <label>[{{(BuyFee*Discount*(Stack*1000)*BPrice)| number:'1.0-2'}}]</label>
   <br />
-  <label>加總金額</label>
+  <label>加總金額 $ </label>
   <label>
-    $[{{((Stack*1000)*BPrice)+(BuyFee*Discount*(Stack*1000)*BPrice)|
+    [{{((Stack*1000)*BPrice)+(BuyFee*Discount*(Stack*1000)*BPrice)|
+    number:'1.0-2'}}]</label
+  >
+  <br />
+  <br />
+  <label>賣出</label>
+  <br />
+  <label>交易手續費%數</label>
+  <input matInput [(ngModel)]="BuyFee" />
+  <br />
+  <label>交易稅 [{{(tax*(Stack*1000)*SPrice)}}]</label>
+  <br />
+  <label>折扣</label>
+  <input matInput [(ngModel)]="Discount" />
+  <br />
+  <label>交易張數(1000股)</label>
+  <input matInput [(ngModel)]="Stack" />張
+  <br />
+  <label>賣出股票單價</label>
+  <input matInput [(ngModel)]="SPrice" />
+
+  <br />
+  <label>賣出手續費 $</label>
+  <label>[{{(BuyFee*Discount*(Stack*1000)*SPrice)| number:'1.0-2'}}]</label>
+  <br />
+  <label>加總金額 $</label>
+  <label>
+    [{{((Stack*1000)*SPrice)+(BuyFee*Discount*(Stack*1000)*SPrice)+(tax*(Stack*1000)*SPrice)|
     number:'1.0-2'}}]</label
   >
 </p>

@@ -50,7 +50,7 @@
   <br />
   <label>加總金額 $</label>
   <label>
-    [{{((Stack*1000)*SPrice)+(BuyFee*Discount*(Stack*1000)*SPrice)+(tax*(Stack*1000)*SPrice)|
+    [{{((Stack*1000)*SPrice)-(BuyFee*Discount*(Stack*1000)*SPrice)-(tax*(Stack*1000)*SPrice)|
     number:'1.0-2'}}]</label
   >
 </p>
